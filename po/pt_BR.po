@@ -18,6 +18,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.4.2\n"
 
+#: pdfarranger/metadata.py:248
+msgid "The modification date cannot be earlier than the creation date."
+msgstr "A data de modificação não pode ser anterior a data de criação."
+
 #: pdfarranger/splitter.py:87
 msgid "#Col"
 msgstr "#Col"
