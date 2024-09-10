@@ -243,6 +243,30 @@ along with PDF Arranger.  If not, see <http://www.gnu.org/licenses/>.
                 <property name="position">1</property>
               </packing>
             </child>
+			<child>
+              <object class="GtkButton">
+                <property name="visible">True</property>
+                <property name="focus_on_click">False</property>
+                <property name="receives_default">False</property>
+                <property name="tooltip_text" translatable="no">Rotate 180</property>
+                <property name="action_name">win.rotate</property>
+                <property name="action_target">180</property>
+                <child>
+                  <object class="GtkImage">
+                    <property name="visible">True</property>
+                    <property name="icon_name">r180</property>
+                  </object>
+                </child>
+                <style>
+                  <class name="image-button"/>
+                </style>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
             <style>
               <class name="linked"/>
             </style>
