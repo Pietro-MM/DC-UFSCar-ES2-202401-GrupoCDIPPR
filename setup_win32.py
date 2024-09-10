@@ -90,6 +90,9 @@ def addicons():
     for i in icons:
         addfile(os.path.join('share/icons/Adwaita/symbolic/', i + '-symbolic.svg'))
 
+    include_files.append(('data/icons/Adwaita/symbolic/actions/r180.png', 'share/icons/Adwaita/symbolic/actions/r180.png'))
+
+
 required_dlls = [
     'poppler-glib-8',
     'handy-1-0',
