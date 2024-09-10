@@ -244,7 +244,7 @@ def edit(metadata, pdffiles, parent):
             if row[2] == _MODIFIED:
                 created_date = metadata.get(_CREATED)
                 modified_date = row[1]
-                if created_date and modified_date and isMinor(modified_date, created_date):
+                if created_date and modified_date and compareDates(modified_date, created_date):
                     msg = _('The modification date cannot be earlier than the creation date.')
                     d = Gtk.MessageDialog(parent=parent,
                                           flags=Gtk.DialogFlags.MODAL,
