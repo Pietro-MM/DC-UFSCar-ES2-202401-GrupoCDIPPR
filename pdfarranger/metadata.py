@@ -241,5 +241,25 @@ def edit(metadata, pdffiles, parent):
             if row[2] in [_CREATED, _MODIFIED]:
                 row[1] = handler._parse_date(row[1], parent)
 
+            if row[2] == _MODIFIED:
+                created_date = metadata.get(_CREATED)
+                modified_date = row[1]
+                if created_date and modified_date and isMinor(modified_date, created_date):
+                    msg = _('The modification date cannot be earlier than the creation date.')
+                    d = Gtk.MessageDialog(parent=parent,
+                                          flags=Gtk.DialogFlags.MODAL,
+                                          type=Gtk.MessageType.ERROR,
+                                          buttons=Gtk.ButtonsType.OK,
+                                          message_format=msg)
+                    d.run()
+                    d.destroy()
+                    return False  # Cancel the operation if dates are invalid
+
             metadata[row[2]] = _strtometa(row[1], row[2])
     return r
+
+def compareDates(modified_date, created_date):
+    if modified_date <= created_date:
+        return True
+    else:
+        return False
